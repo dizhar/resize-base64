@@ -1,0 +1,20 @@
+{
+  "name": "resize-base64",
+  "version": "1.0.8",
+  "description": "A function that resizes a base64 image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "resize",
+    "base64",
+    "image",
+    "picture"
+  ],
+  "author": "Daniel Izhar <dizhar888@gmail.com> (http://daniwebmaster.com)",
+  "license": "ISC",
+  "dependencies": {
+    "create-readme": "^1.1.0"
+  }
+}
