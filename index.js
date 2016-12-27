@@ -1,4 +1,4 @@
-exports.resizebase64 = function(base64, maxWidth, maxHeight){
+module.exports = function(base64, maxWidth, maxHeight){
 
 
 // Max size for thumbnail
