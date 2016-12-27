@@ -1,6 +1,6 @@
 ## When passing an image base64 as first argument to the function, it returns the base64 of the resized image. maxWidth and maxHeight are optional.
 
-#### Note: This is a font-end package. This package will not work on the server side.  Consider installing browsify or webpack.
+#### Note: This is a font-end package. 
 
 
 ####  What is it for?
@@ -8,15 +8,13 @@
 
 
 #### How do I install it?
-`npm install resize-base64  --save`
+`bower install resize-base64  --save`
 
 
 
-##### For npm 
+##### To use
 ```
-var resizebase64 = require('resize-base64');  
-
-var  img = resizebase64(base64, maxWidth, maxHeight); 
+var image = resizebase64(base64, maxWidth, maxHeight); 
 
 ```
 

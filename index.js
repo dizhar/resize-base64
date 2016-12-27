@@ -1,4 +1,4 @@
-module.exports = function(base64, maxWidth, maxHeight){
+ resizebase64 = function(base64, maxWidth, maxHeight){
 
 
 // Max size for thumbnail
@@ -33,7 +33,4 @@ module.exports = function(base64, maxWidth, maxHeight){
   ctx.drawImage(canvasCopy, 0, 0, canvasCopy.width, canvasCopy.height, 0, 0, canvas.width, canvas.height);
 
   return canvas.toDataURL();
-
-
-
 }
