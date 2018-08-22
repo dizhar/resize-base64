@@ -36,8 +36,8 @@ where your package.json is saved.
 	let maxWidth = 75;
 	let maxHeight = 75;
 	
-	let callback = function(image) {
-		document.getElementById('smallImage').src = image;
+	let callback = function(resizedImage) {
+		document.getElementById('smallImage').src = resizedImage;
 	}
 	
 	resizebase64(base64Image_320x240, maxWidth, maxHeight, callback);
