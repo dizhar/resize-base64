@@ -1,6 +1,6 @@
 {
   "name": "resize-base64",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "A function that resizes a base64 image",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,10 @@
     "picture"
   ],
   "author": "Daniel Izhar <dizhar888@gmail.com> (http://daniwebmaster.com)",
+  "contributors": [
+  {
+      "name": "Hendrik Scholz"
+  }],
   "license": "ISC",
   "dependencies": {
     "create-readme": "^1.1.0"

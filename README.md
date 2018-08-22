@@ -1,21 +1,39 @@
-## When passing an image base64 as first argument to the function, it returns the base64 of the resized image. maxWidth and maxHeight are optional.
+# resize-base64
 
-#### Note: This is a font-end package. 
+A function that resizes a Base64 image. Pass a Base64 string of an image, the maximum width, the maximum size, and a callback to the function and it returns the resized image as soon as the resizing is done.
 
+## Restrictions
 
-####  What is it for?
-`If you have a base64 image and you would like to resize it, this function will return a base64 image resizes to your height and width specifications.`
+The function can only be used in frontend code. 
 
+## Example
 
-#### How do I install it?
+```
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="../src/index.js"></script>
+<script type="text/javascript">
+	let base64Image_320x240 = 'data:image/jpeg;base64,/9j/4AAQSk...';
+	let maxWidth = 75;
+	let maxHeight = 75;
+	
+	let callback = function(image) {
+		document.getElementById('smallImage').src = image;
+	}
+	
+	resizebase64(base64Image_320x240, maxWidth, maxHeight, callback);
+</script>
+</head>
+<body>
+	<img id="smallImage">
+</body>
+</html>
+```
+
+See test/resizeBase64ImageFrom320x240ToMax75x75.html for details.
+
+## Installation
+
 `bower install resize-base64  --save`
-
-
-
-##### To use
-```
-var image = resizebase64(base64, maxWidth, maxHeight); 
-
-```
-
-
