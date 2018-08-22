@@ -6,6 +6,23 @@ A function that resizes a Base64 image. Pass a Base64 string of an image, the ma
 
 The function can only be used in frontend code. 
 
+## Installation
+
+```
+bower install https://github.com/hendrik-scholz/resize-base64/archive/master.zip
+```
+
+```
+npm install https://github.com/hendrik-scholz/resize-base64/#master
+```
+
+Add the following line to your package.json and call 'npm install' from the directory
+where your package.json is saved.
+
+```
+"resize-base64": "https://github.com/hendrik-scholz/resize-base64/#master"
+```
+
 ## Example
 
 ```
@@ -33,7 +50,3 @@ The function can only be used in frontend code.
 ```
 
 See test/resizeBase64ImageFrom320x240ToMax75x75.html for details.
-
-## Installation
-
-`bower install resize-base64  --save`

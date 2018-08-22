@@ -34,4 +34,4 @@ resizebase64 = function(base64, maxWidth, maxHeight, callback) {
 
 	  callback(canvas.toDataURL());
   };
-}
+};
