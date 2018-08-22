@@ -37,14 +37,14 @@ where your package.json is saved.
 	let maxHeight = 75;
 	
 	let callback = function(resizedImage) {
-		document.getElementById('smallImage').src = resizedImage;
+		document.getElementById('resizedImage').src = resizedImage;
 	}
 	
-	resizebase64(base64Image_320x240, maxWidth, maxHeight, callback);
+	resizeBase64(base64Image_320x240, maxWidth, maxHeight, callback);
 </script>
 </head>
 <body>
-	<img id="smallImage">
+	<img id="resizedImage">
 </body>
 </html>
 ```

@@ -1,4 +1,4 @@
-resizebase64 = function(base64, maxWidth, maxHeight, callback) {
+resizeBase64 = function(base64, maxWidth, maxHeight, callback) {
 
   // Max size for thumbnail
   if(typeof(maxWidth) === 'undefined')  maxWidth = 500;
