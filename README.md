@@ -30,20 +30,27 @@ where your package.json is saved.
 <html>
 <head>
 <meta charset="utf-8"/>
-<script src="../src/index.js"></script>
+<script src="../index.js"></script>
 <script type="text/javascript">
 	let base64Image_320x240 = 'data:image/jpeg;base64,/9j/4AAQSk...';
 	let maxWidth = 75;
 	let maxHeight = 75;
 	
-	let callback = function(resizedImage) {
+	let successCallback = function(resizedImage) {
+		document.getElementById('originalImage').src = base64Image_320x240;
 		document.getElementById('resizedImage').src = resizedImage;
-	}
+	};
 	
-	resizeBase64(base64Image_320x240, maxWidth, maxHeight, callback);
+	let errorCallback = function(errorMessage) {
+		alert(errorMessage);
+	};
+	
+	resizeBase64(base64Image_320x240, maxWidth, maxHeight, successCallback, errorCallback);
 </script>
 </head>
 <body>
+	<img id="originalImage">
+
 	<img id="resizedImage">
 </body>
 </html>

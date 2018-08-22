@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="../index.js"></script>
+<script type="text/javascript">
+	let base64ImageError = undefined;
+	let maxWidth = 75;
+	let maxHeight = 75;
+	
+	let successCallback = function(resizedImage) {
+		document.getElementById('resizedImage').src = resizedImage;
+	};
+	
+	let errorCallback = function(errorMessage) {
+		alert(errorMessage);
+	};
+	
+	resizeBase64(base64ImageError, maxWidth, maxHeight, successCallback, errorCallback);
+</script>
+</head>
+<body>
+	<img id="resizedImage">
+</body>
+</html>
