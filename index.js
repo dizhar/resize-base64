@@ -1,4 +1,4 @@
-resizeBase64 = function(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
+function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
   if(base64String === undefined) {
 	  errorCallback('The input parameter base64String is undefined.');
   } else if(base64String === null) {
@@ -57,3 +57,5 @@ resizeBase64 = function(base64String, maxWidth, maxHeight, successCallback, erro
 	  };
   }
 };
+
+export { resizeBase64 };
