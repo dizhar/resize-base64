@@ -3,6 +3,8 @@ resizeBase64 = function(base64String, maxWidth, maxHeight, successCallback, erro
     errorCallback('The input parameter base64String is undefined.');
   } else if(base64String === null) {
 	  errorCallback('The input parameter base64String is null.');
+  } else if(typeof(base64String) != 'string') {
+	  errorCallback('The input parameter base64String is not of type \'string\'.');
   } else if(!base64String.startsWith('data:image')) {
 	  errorCallback('The input parameter base64String does not start with \'data:image\'.');
   } else if(maxWidth === undefined) {
@@ -32,7 +34,7 @@ resizeBase64 = function(base64String, maxWidth, maxHeight, successCallback, erro
 		  // Determine new ratio based on max size
 		  let ratio = 1;
 		  if(img.width > maxWidth) {
-			  ratio = maxWidth / img.width;  
+			ratio = maxWidth / img.width;  
 		  } else if(img.height > maxHeight) {
 		    ratio = maxHeight / img.height;
 		  }
