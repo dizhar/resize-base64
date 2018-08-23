@@ -1,9 +1,10 @@
 {
   "name": "resize-base64",
-  "description": "A function that resizes a base64 image",
+  "description": "A function that resizes a Base64 image",
   "main": "index.js",
   "authors": [
-    "Daniel Izhar <dizhar888@gmail.com> (http://daniwebmaster.com)"
+    "Daniel Izhar <dizhar888@gmail.com> (http://daniwebmaster.com)",
+    "Hendrik Scholz"
   ],
   "license": "ISC",
   "keywords": [
