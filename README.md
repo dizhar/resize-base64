@@ -32,6 +32,19 @@ where your package.json is saved.
 "resize-base64": "https://github.com/hendrik-scholz/resize-base64/#master"
 ```
 
+## Usage
+
+### Angular
+
+Add the following line to the TS file to import the resize function.
+
+```
+import { resizeBase64 } from 'resize-base64';
+```
+
+Call the resize function as shown in the example below.
+
+
 ## Example
 
 ```

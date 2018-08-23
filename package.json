@@ -1,6 +1,6 @@
 {
   "name": "resize-base64",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "A function that resizes a Base64 image",
   "main": "index.js",
   "scripts": {
