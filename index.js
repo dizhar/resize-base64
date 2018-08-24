@@ -13,12 +13,16 @@ function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorC
 	  errorCallback('The input parameter maxWidth is null.');
   } else if(typeof(maxWidth) != 'number') {
 	  errorCallback('The input parameter maxWidth is not of type \'number\'.');
+  } else if(maxWidth < 2) {
+	  errorCallback('The input parameter maxWidth must be at least 2 pixel.');
   }	else if(maxHeight === undefined) {
 	  errorCallback('The input parameter maxHeight is undefined.');
   }	else if(maxHeight === null) {
 	  errorCallback('The input parameter maxHeight is null.');
   } else if(typeof(maxHeight) != 'number') {
 	  errorCallback('The input parameter maxHeight is not of type \'number\'.');
+  } else if(maxHeight < 2) {
+	  errorCallback('The input parameter maxHeight must be at least 2 pixel.');
   } else {
 	  // Create and initialize two canvas
 	  let canvas = document.createElement("canvas");

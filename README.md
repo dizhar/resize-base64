@@ -44,6 +44,9 @@ import { resizeBase64 } from 'resize-base64';
 
 Call the resize function as shown in the example below.
 
+## Test
+
+Tests have to be run with 'export { resizeBase64 };' commented out in the index.js.
 
 ## Example
 
