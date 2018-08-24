@@ -1,3 +1,9 @@
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(search, pos) {
+	  return this.substr(!pos || pos < 0 ? 0 : +pos, search.length) === search;
+  };
+}
+
 function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
   if(base64String === undefined) {
 	  errorCallback('The input parameter base64String is undefined.');
@@ -34,7 +40,7 @@ function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorC
 	  let img = new Image();
 	  img.src = base64String;
 	  
-	  img.onload = () => {
+	  img.onload = function() {
 		  // Determine new ratio based on max size
 		  let ratio = 1;
 		  if(img.width > maxWidth) {
@@ -56,7 +62,7 @@ function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorC
 		  successCallback(canvas.toDataURL());
 	  };
 	  
-	  img.onerror = () => {
+	  img.onerror = function() {
 		  errorCallback('Error while loading image.');  
 	  };
   }
