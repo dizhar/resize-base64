@@ -7,7 +7,7 @@ A function that resizes a Base64 image. Pass a Base64 string of an image, the ma
 | base64String | the image to resize as a Base64 string |
 | maxWidth | the maxmium width that the image should be resized to |
 | maxHeight | the maxmium height that the image should be resized to |
-| successCallback | the callback the contains the resized image as a Base64 string |
+| successCallback | the callback that contains the resized image as a Base64 string |
 | errorCallback | the callback that contains the error that occurred during resizing |
 
 
