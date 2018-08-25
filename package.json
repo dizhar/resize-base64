@@ -18,5 +18,8 @@
   {
       "name": "Hendrik Scholz"
   }],
+  "bugs": {
+  	"url": "https://github.com/hendrik-scholz/resize-base64/issues"
+  },
   "license": "ISC"
 }
