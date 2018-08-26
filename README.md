@@ -10,10 +10,10 @@ A function that resizes a Base64 image. Pass a Base64 string of an image, the ma
 | successCallback | the callback that contains the resized image as a Base64 string |
 | errorCallback | the callback that contains the error that occurred during resizing |
 
-
 ## Restrictions
 
-The function can only be used in frontend code. 
+* The function can only be used in frontend code.
+* Since enlarging images is not desirable due to the loss of quality, the function does not support it. Create a feature request for enlarging images if necessary.
 
 ## Installation
 
@@ -36,19 +36,15 @@ where your package.json is saved.
 
 ### Angular
 
-Add the following line to the TS file to import the resize function.
-
-```
-import { resizeBase64 } from 'resize-base64';
-```
-
-Call the resize function as shown in the example below.
-
 See https://github.com/hendrik-scholz/resize-base64-angular-example for details.
+
+### Vue
+
+See https://github.com/hendrik-scholz/resize-base64-vue-example for details.
 
 ## Test
 
-Tests have to be run with 'export { resizeBase64 };' commented out in the index.js.
+The tests in the test folder have to be run with 'export { resizeBase64 };' commented out in the index.js.
 
 ## Example
 
