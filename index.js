@@ -5,26 +5,20 @@ if (!String.prototype.startsWith) {
 }
 
 function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
-  if(base64String === undefined) {
-	  errorCallback('The input parameter base64String is undefined.');
-  } else if(base64String === null) {
-	  errorCallback('The input parameter base64String is null.');
+  if(!base64String) {
+	  errorCallback('The input parameter base64String is ' + base64String + '.');
   } else if(typeof(base64String) != 'string') {
 	  errorCallback('The input parameter base64String is not of type \'string\'.');
   } else if(!base64String.startsWith('data:image')) {
 	  errorCallback('The input parameter base64String does not start with \'data:image\'.');
-  } else if(maxWidth === undefined) {
-	  errorCallback('The input parameter maxWidth is undefined.');
-  } else if(maxWidth === null) {
-	  errorCallback('The input parameter maxWidth is null.');
+  } else if(!maxWidth) {
+	  errorCallback('The input parameter maxWidth is ' + maxWidth + '.');
   } else if(typeof(maxWidth) != 'number') {
 	  errorCallback('The input parameter maxWidth is not of type \'number\'.');
   } else if(maxWidth < 2) {
 	  errorCallback('The input parameter maxWidth must be at least 2 pixel.');
-  }	else if(maxHeight === undefined) {
-	  errorCallback('The input parameter maxHeight is undefined.');
-  }	else if(maxHeight === null) {
-	  errorCallback('The input parameter maxHeight is null.');
+  }	else if(!maxHeight) {
+	  errorCallback('The input parameter maxHeight is ' + maxHeight + '.');
   } else if(typeof(maxHeight) != 'number') {
 	  errorCallback('The input parameter maxHeight is not of type \'number\'.');
   } else if(maxHeight < 2) {
