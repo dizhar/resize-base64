@@ -4,6 +4,8 @@ if (!String.prototype.startsWith) {
   };
 }
 
+const DEFAULT_RATION = 1;
+
 function validateInput(base64String, maxWidth, maxHeight) {
 	let validationResult = {
 		isValid: false,
@@ -36,48 +38,112 @@ function validateInput(base64String, maxWidth, maxHeight) {
 	return validationResult;
 }
 
-function resizeBase64(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
+function maxWidthRatioFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
+	let ratio = DEFAULT_RATION;
+
+	if(imageWidth > targetWidth) {
+		ratio = targetWidth / imageWidth;
+	}
+
+	return {
+		width: ratio,
+		height: ratio
+	};
+}
+
+function maxHeightRatioFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
+	let ratio = DEFAULT_RATION;
+
+	if(imageHeight > targetHeight) {
+		ratio = targetHeight / imageHeight;
+	}
+
+	return {
+		width: ratio,
+		height: ratio
+	};
+}
+
+function maxWidthMaxHeightRationFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
+	let widthRation = DEFAULT_RATION;
+	let heightRation = DEFAULT_RATION;
+
+	if(imageWidth > targetWidth &&
+	   imageHeight > targetHeight) {
+		widthRation = targetWidth / imageWidth;
+		heightRation = targetHeight / imageHeight;
+	}
+
+	return {
+		width: widthRation,
+		height: heightRation
+	};
+}
+
+function resizeBase64ForMaxWidth(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
 	let validationResult = validateInput(base64String, maxWidth, maxHeight);
 
 	if(validationResult.isValid === true) {
-		// Create and initialize two canvas
-		let canvas = document.createElement("canvas");
-		let ctx = canvas.getContext("2d");
-		let canvasCopy = document.createElement("canvas");
-		let copyContext = canvasCopy.getContext("2d");
-
-		// Create original image
-		let img = new Image();
-		img.src = base64String;
-
-		img.onload = function() {
-			// Determine new ratio based on max size
-			let ratio = 1;
-			if(img.width > maxWidth) {
-			ratio = maxWidth / img.width;
-			} else if(img.height > maxHeight) {
-			ratio = maxHeight / img.height;
-			}
-
-			// Draw original image in second canvas
-			canvasCopy.width = img.width;
-			canvasCopy.height = img.height;
-			copyContext.drawImage(img, 0, 0);
-
-			// Copy and resize second canvas to first canvas
-			canvas.width = img.width * ratio;
-			canvas.height = img.height * ratio;
-			ctx.drawImage(canvasCopy, 0, 0, canvasCopy.width, canvasCopy.height, 0, 0, canvas.width, canvas.height);
-
-			successCallback(canvas.toDataURL());
-		};
-
-		img.onerror = function() {
-			errorCallback('Error while loading image.');
-		};
+		resizeBase64(base64String, maxWidth, maxHeight, maxWidthRatioFunction, successCallback, errorCallback);
 	} else {
 		errorCallback(validationResult.errorMessage);
 	}
+}
+
+function resizeBase64ForMaxHeight(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
+	let validationResult = validateInput(base64String, maxWidth, maxHeight);
+
+	if(validationResult.isValid === true) {
+		resizeBase64(base64String, maxWidth, maxHeight, maxHeightRatioFunction, successCallback, errorCallback);
+	} else {
+		errorCallback(validationResult.errorMessage);
+	}
+}
+
+function resizeBase64ForMaxWidthAndMaxHeight(base64String, maxWidth, maxHeight, successCallback, errorCallback) {
+	let validationResult = validateInput(base64String, maxWidth, maxHeight);
+
+	if(validationResult.isValid === true) {
+		resizeBase64(base64String, maxWidth, maxHeight, maxWidthMaxHeightRationFunction, successCallback, errorCallback);
+	} else {
+		errorCallback(validationResult.errorMessage);
+	}
+}
+
+function resizeBase64(base64String, maxWidth, maxHeight, ratioFunction, successCallback, errorCallback) {
+	// Create and initialize two canvas
+	let canvas = document.createElement("canvas");
+	let ctx = canvas.getContext("2d");
+	let canvasCopy = document.createElement("canvas");
+	let copyContext = canvasCopy.getContext("2d");
+
+	// Create original image
+	let img = new Image();
+	img.src = base64String;
+
+	img.onload = function() {
+		let rationResult = ratioFunction(img.width, img.height, maxWidth, maxHeight);
+		widthRatio = rationResult.width;
+		heightRatio = rationResult.height;
+
+		// Draw original image in second canvas
+		canvasCopy.width = img.width;
+		canvasCopy.height = img.height;
+		copyContext.drawImage(img, 0, 0);
+
+		// Copy and resize second canvas to first canvas
+		canvas.width = img.width * widthRatio;
+		canvas.height = img.height * heightRatio;
+		ctx.drawImage(canvasCopy, 0, 0, canvasCopy.width, canvasCopy.height, 0, 0, canvas.width, canvas.height);
+
+		successCallback(canvas.toDataURL());
+	};
+
+	img.onerror = function() {
+		errorCallback('Error while loading image.');
+	};
 };
 
-export { resizeBase64 };
+export { resizeBase64ForMaxWidth };
+export { resizeBase64ForMaxHeight };
+export { resizeBase64ForMaxWidthAndMaxHeight };
