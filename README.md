@@ -54,9 +54,11 @@ See https://github.com/hendrik-scholz/resize-base64-vue-example for details.
 
 The tests in the test folder have to be run with the following lines commented out in the index.js:
 
+```
 export { resizeBase64ForMaxWidth };
 export { resizeBase64ForMaxHeight };
 export { resizeBase64ForMaxWidthAndMaxHeight };
+```
 
 ## Example
 
