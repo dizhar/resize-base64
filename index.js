@@ -123,8 +123,8 @@ function resizeBase64(base64String, maxWidth, maxHeight, ratioFunction, successC
 
 	img.onload = function() {
 		let rationResult = ratioFunction(img.width, img.height, maxWidth, maxHeight);
-		widthRatio = rationResult.width;
-		heightRatio = rationResult.height;
+		let widthRatio = rationResult.width;
+		let heightRatio = rationResult.height;
 
 		// Draw original image in second canvas
 		canvasCopy.width = img.width;
