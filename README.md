@@ -6,7 +6,9 @@ Functions that resize a Base64 image. Pass a Base64 string of an image, the maxi
 | ------ | ----------- |
 | resizeBase64ForMaxWidth | resizes an image to the maximum width, the aspect ratio of the image is maintained |
 | resizeBase64ForMaxHeight | resizes an image to the maximum height, the aspect ratio of the image is maintained |
-| resizeBase64ForMaxWidthAndMaxHeight | resizes an image to the maximum width and maximum height given, the aspect ratio of the image is not maintained |
+| resizeBase64ForMaxWidthAndMaxHeight | resizes an image to the maximum width and maximum height, the aspect ratio of the image is not maintained |
+
+Every function takes the parameters listed below.
 
 | Parameter | Description |
 | ------ | ----------- |
