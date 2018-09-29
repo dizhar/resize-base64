@@ -4,7 +4,7 @@ if (!String.prototype.startsWith) {
   };
 }
 
-const DEFAULT_RATION = 1;
+const DEFAULT_RATIO = 1;
 
 function validateInput(base64String, maxWidth, maxHeight) {
 	let validationResult = {
@@ -39,7 +39,7 @@ function validateInput(base64String, maxWidth, maxHeight) {
 }
 
 function maxWidthRatioFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
-	let ratio = DEFAULT_RATION;
+	let ratio = DEFAULT_RATIO;
 
 	if(imageWidth > targetWidth) {
 		ratio = targetWidth / imageWidth;
@@ -52,7 +52,7 @@ function maxWidthRatioFunction(imageWidth, imageHeight, targetWidth, targetHeigh
 }
 
 function maxHeightRatioFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
-	let ratio = DEFAULT_RATION;
+	let ratio = DEFAULT_RATIO;
 
 	if(imageHeight > targetHeight) {
 		ratio = targetHeight / imageHeight;
@@ -64,19 +64,19 @@ function maxHeightRatioFunction(imageWidth, imageHeight, targetWidth, targetHeig
 	};
 }
 
-function maxWidthMaxHeightRationFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
-	let widthRation = DEFAULT_RATION;
-	let heightRation = DEFAULT_RATION;
+function maxWidthMaxHeightRatioFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
+	let widthRatio = DEFAULT_RATIO;
+	let heightRatio = DEFAULT_RATIO;
 
 	if(imageWidth > targetWidth &&
 	   imageHeight > targetHeight) {
-		widthRation = targetWidth / imageWidth;
-		heightRation = targetHeight / imageHeight;
+		widthRatio = targetWidth / imageWidth;
+		heightRatio = targetHeight / imageHeight;
 	}
 
 	return {
-		width: widthRation,
-		height: heightRation
+		width: widthRatio,
+		height: heightRatio
 	};
 }
 
@@ -104,7 +104,7 @@ function resizeBase64ForMaxWidthAndMaxHeight(base64String, maxWidth, maxHeight, 
 	let validationResult = validateInput(base64String, maxWidth, maxHeight);
 
 	if(validationResult.isValid === true) {
-		resizeBase64(base64String, maxWidth, maxHeight, maxWidthMaxHeightRationFunction, successCallback, errorCallback);
+		resizeBase64(base64String, maxWidth, maxHeight, maxWidthMaxHeightRatioFunction, successCallback, errorCallback);
 	} else {
 		errorCallback(validationResult.errorMessage);
 	}
@@ -122,9 +122,9 @@ function resizeBase64(base64String, maxWidth, maxHeight, ratioFunction, successC
 	img.src = base64String;
 
 	img.onload = function() {
-		let rationResult = ratioFunction(img.width, img.height, maxWidth, maxHeight);
-		let widthRatio = rationResult.width;
-		let heightRatio = rationResult.height;
+		let ratioResult = ratioFunction(img.width, img.height, maxWidth, maxHeight);
+		let widthRatio = ratioResult.width;
+		let heightRatio = ratioResult.height;
 
 		// Draw original image in second canvas
 		canvasCopy.width = img.width;
