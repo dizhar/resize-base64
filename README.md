@@ -52,13 +52,8 @@ See https://github.com/hendrik-scholz/resize-base64-vue-example for details.
 
 ## Test
 
-The tests in the test folder have to be run with the following lines commented out in the index.js:
-
-```
-export { resizeBase64ForMaxWidth };
-export { resizeBase64ForMaxHeight };
-export { resizeBase64ForMaxWidthAndMaxHeight };
-```
+1. Copy the index.js and the test folder with all its files to an HTTP server.
+2. Request the HTML file for the test case in the browser, e.g. http://localhost/resize-base64/test/resizeBase64ImageFrom320x240ToMaxHeight120.html
 
 ## Example
 
@@ -67,8 +62,9 @@ export { resizeBase64ForMaxWidthAndMaxHeight };
 <html>
 <head>
 <meta charset="utf-8"/>
-<script src="../index.js"></script>
-<script type="text/javascript">
+<script type="module">
+	import { resizeBase64ForMaxHeight } from '../index.js';
+	
 	let base64Image_320x240 = 'data:image/jpeg;base64,/9j/4AAQSk...';
 	let maxWidth = 2;
 	let maxHeight = 120;
