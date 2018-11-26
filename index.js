@@ -65,14 +65,8 @@ function maxHeightRatioFunction(imageWidth, imageHeight, targetWidth, targetHeig
 }
 
 function maxWidthMaxHeightRatioFunction(imageWidth, imageHeight, targetWidth, targetHeight) {
-	let widthRatio = DEFAULT_RATIO;
-	let heightRatio = DEFAULT_RATIO;
-
-	if(imageWidth > targetWidth &&
-	   imageHeight > targetHeight) {
-		widthRatio = targetWidth / imageWidth;
-		heightRatio = targetHeight / imageHeight;
-	}
+	widthRatio = targetWidth / imageWidth;
+	heightRatio = targetHeight / imageHeight;
 
 	return {
 		width: widthRatio,

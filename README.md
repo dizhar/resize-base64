@@ -21,7 +21,7 @@ Every function takes the parameters listed below.
 ## Restrictions
 
 * The function can only be used in frontend code.
-* Since enlarging images is not desirable due to the loss of quality, the function does not support it. Create a feature request for enlarging images if necessary.
+* Since enlarging images is not desirable due to the loss of quality, the functions resizeBase64ForMaxWidth and resizeBase64ForMaxHeight do not support it. Use the function resizeBase64ForMaxWidthAndMaxHeight for free resizing (shrinking and enlarging).
 
 ## Installation
 
