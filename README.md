@@ -1,6 +1,6 @@
 # resize-base64
 
-Functions that resize a Base64 image. Pass a Base64 string of an image, the maximum width, the maximum size, a success callback, and an error callback to the function. The function returns the resized image in the success callback.
+Functions that resize a Base64 image. Pass a Base64 string of an image, the maximum width, the maximum height, a success callback, and an error callback to the function. The function returns the resized image in the success callback.
 
 | Function | Description |
 | ------ | ----------- |
