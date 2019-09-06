@@ -26,18 +26,7 @@ Every function takes the parameters listed below.
 ## Installation
 
 ```
-bower install https://github.com/hendrik-scholz/resize-base64/archive/master.zip
-```
-
-```
-npm install https://github.com/hendrik-scholz/resize-base64/#master
-```
-
-Add the following line to your package.json and call 'npm install' from the directory
-where your package.json is saved.
-
-```
-"resize-base64": "https://github.com/hendrik-scholz/resize-base64/#master"
+npm i --save https://github.com/hendrik-scholz/resize-base64/#master
 ```
 
 ## Usage
