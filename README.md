@@ -29,16 +29,6 @@ Every function takes the parameters listed below.
 npm i --save https://github.com/hendrik-scholz/resize-base64/#master
 ```
 
-## Usage
-
-### Angular
-
-See https://github.com/hendrik-scholz/resize-base64-angular-example for details.
-
-### Vue
-
-See https://github.com/hendrik-scholz/resize-base64-vue-example for details.
-
 ## Test
 
 1. Copy the index.js and the test folder with all its files to an HTTP server.
