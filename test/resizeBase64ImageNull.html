@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script type="module">
+	import { resizeBase64ForMaxWidthAndMaxHeight } from '../index.js';
+
+	let base64ImageError = null;
+	let maxWidth = 75;
+	let maxHeight = 75;
+	
+	let successCallback = function(resizedImage) {
+		document.getElementById('resizedImage').src = resizedImage;
+	};
+	
+	let errorCallback = function(errorMessage) {
+		alert(errorMessage);
+	};
+	
+	resizeBase64ForMaxWidthAndMaxHeight(base64ImageError, maxWidth, maxHeight, successCallback, errorCallback);
+</script>
+</head>
+<body>
+	<img id="resizedImage">
+</body>
+</html>

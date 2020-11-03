@@ -1,7 +1,11 @@
 {
   "name": "resize-base64",
-  "version": "1.0.13",
-  "description": "A function that resizes a base64 image",
+  "version": "1.2.1",
+  "description": "A function that resizes a Base64 image",
+  "files": [
+    "index.js",
+    "README.md"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,8 +17,13 @@
     "picture"
   ],
   "author": "Daniel Izhar <dizhar888@gmail.com> (http://daniwebmaster.com)",
-  "license": "ISC",
-  "dependencies": {
-    "create-readme": "^1.1.0"
-  }
+  "contributors": [
+    {
+      "name": "Hendrik Scholz"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/hendrik-scholz/resize-base64/issues"
+  },
+  "license": "ISC"
 }
