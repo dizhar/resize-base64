@@ -69,3 +69,5 @@ npm i --save https://github.com/hendrik-scholz/resize-base64/#master
 ```
 
 See test/resizeBase64ImageFrom320x240ToMaxHeight120.html for details.
+
+![Resize Example](screenshots/resize.png "Resize Example")
